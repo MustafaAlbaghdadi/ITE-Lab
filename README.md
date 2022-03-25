@@ -1,6 +1,6 @@
 # Important
 
-Issues of this repository are tracked on https://github.com/MustafaAlbaghdadi/Asp-Core-6-with-custom-Roles/issues. Please create your issues on https://github.com/MustafaAlbaghdadi/Asp-Core-6-with-custom-Roles/issues.
+Issues of this repository are tracked on https://github.com/MustafaAlbaghdadi/ITE-Lab/issues. Please create your issues on https://github.com/MustafaAlbaghdadi/ITE-Lab/issues/new.
 
 # ASP.NET Core & EntityFramework Core Based Startup Template
 
