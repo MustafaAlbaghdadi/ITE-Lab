@@ -1,0 +1,125 @@
+﻿@model aspcore.Models.Ticket
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-header">
+    <h3 class="float-start">Create Ticket</h3>
+    <p class="float-end">
+        <a asp-action="Index" class="btn btn-outline-danger">Back</a>
+    </p>
+</div>
+
+<div class="card-body">
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                </br>
+
+                <div class="form-group ">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" multiple="true" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                </br>
+                <div class="form-group ">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" multiple="true" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+
+
+                </br>
+                <div class="form-group ">
+                    <label asp-for="CableType" class="control-label"></label>
+                    <input asp-for="CableType" class="form-control" multiple="true" />
+                    <span asp-validation-for="CableType" class="text-danger"></span>
+                </div>
+
+
+
+
+                </br>
+                <div class="form-group ">
+                    <label asp-for="TestType" class="control-label"></label>
+
+                    @*<input asp-for="TestType" class="form-control" multiple="true" />*@
+                    @Html.DropDownListFor(m => m.TestType,
+                    new SelectList( new string[]{"Single Core" , "Multi Core"}),
+                    "Select Type",new { @class = "form-control" })
+
+                    <span asp-validation-for="TestType" class="text-danger"></span>
+                </div>
+
+                </br>
+                <div class="form-group ">
+                    <label asp-for="CoresNumbers" class="control-label"></label>
+                    <input asp-for="CoresNumbers" class="form-control" multiple="true" />
+                    <span asp-validation-for="CoresNumbers" class="text-danger"></span>
+                </div>
+
+                </br>
+                <div class="form-group ">
+                    <label asp-for="CableLength" class="control-label"></label>
+                    <input asp-for="CableLength" class="form-control" multiple="true" />
+                    <span asp-validation-for="CableLength" class="text-danger"></span>
+                </div>
+
+
+                </br>
+                <div class="form-group ">
+                    <label asp-for="Wavelength" class="control-label"></label>
+                    @Html.DropDownListFor(m => m.Wavelength,
+                    new SelectList( new string[]{"850" , "1310" , "1550"}),
+                    "Select Wavelength",new { @class = "form-control" })
+                    <span asp-validation-for="Wavelength" class="text-danger"></span>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </br>
+                <div class="form-group ">
+                    <label asp-for="Note" class="control-label"></label>
+                    <input asp-for="Note" class="form-control" multiple="true" required="false" />
+                    <span asp-validation-for="Note" class="text-danger"></span>
+                </div>
+
+                </br>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
